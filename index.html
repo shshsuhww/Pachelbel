@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Johann Pachelbel – Recap-Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e6f0ff, #ffffff);
+            margin: 0;
+            padding: 0;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 24px 28px 32px;
+        }
+
+        h1 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        p.intro {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .question {
+            margin-bottom: 18px;
+            padding: 12px 14px;
+            border-radius: 6px;
+            border: 1px solid #dde3f0;
+        }
+
+        .question.correct {
+            border-color: #3aa655;
+            background: #f2fbf5;
+        }
+
+        .question.incorrect {
+            border-color: #d9534f;
+            background: #fef2f2;
+        }
+
+        .question-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        label {
+            display: block;
+            margin: 4px 0;
+            cursor: pointer;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        button {
+            padding: 10px 18px;
+            border-radius: 4px;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button#checkBtn {
+            background-color: #2b6fe3;
+            color: #ffffff;
+            margin-right: 8px;
+        }
+
+        button#resetBtn {
+            background-color: #e0e4ed;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .hint {
+            font-size: 13px;
+            color: #666;
+            text-align: center;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+<div class="quiz-container">
+    <h1>Johann Pachelbel – Recap-Quiz</h1>
+    <p class="intro">
+        Kurzes Wissens-Check-in nach der Präsentation. Wählt bei jeder Frage die aus
+        eurer Sicht richtige Antwort aus und klickt danach auf „Auswerten“.
+    </p>
+
+    <form id="quizForm">
+        <!-- Frage 1 -->
+        <div class="question" data-question-id="q1">
+            <div class="question-title">
+                1. Wann wurde Johann Pachelbel getauft?
+            </div>
+            <label><input type="radio" name="q1" value="a"> 01.09.1643</label>
+            <label><input type="radio" name="q1" value="b"> 01.09.1653</label>
+            <label><input type="radio" name="q1" value="c"> 03.03.1706</label>
+            <label><input type="radio" name="q1" value="d"> 1695</label>
+        </div>
+
+        <!-- Frage 2 -->
+        <div class="question" data-question-id="q2">
+            <div class="question-title">
+                2. In welchem Zeitraum studierte Pachelbel laut Präsentation?
+            </div>
+            <label><input type="radio" name="q2" value="a"> 1600–1604</label>
+            <label><input type="radio" name="q2" value="b"> 1669–1673</label>
+            <label><input type="radio" name="q2" value="c"> 1673–1677</label>
+            <label><input type="radio" name="q2" value="d"> 1690–1692</label>
+        </div>
+
+        <!-- Frage 3 -->
+        <div class="question" data-question-id="q3">
+            <div class="question-title">
+                3. Welche Tätigkeit übte Pachelbel von 1673 bis 1677 aus?
+            </div>
+            <label><input type="radio" name="q3" value="a"> Hofkomponist in Wien</label>
+            <label><input type="radio" name="q3" value="b"> Hilfsorganist bei Bachs Bruder</label>
+            <label><input type="radio" name="q3" value="c"> Kantor in Leipzig</label>
+            <label><input type="radio" name="q3" value="d"> Konzertmeister in Paris</label>
+        </div>
+
+        <!-- Frage 4 -->
+        <div class="question" data-question-id="q4">
+            <div class="question-title">
+                4. Mit welcher Stadt ist das Jahr 1678 verbunden?
+            </div>
+            <label><input type="radio" name="q4" value="a"> Erfurt</label>
+            <label><input type="radio" name="q4" value="b"> Eisenach</label>
+            <label><input type="radio" name="q4" value="c"> Stuttgart</label>
+            <label><input type="radio" name="q4" value="d"> Nürnberg</label>
+        </div>
+
+        <!-- Frage 5 -->
+        <div class="question" data-question-id="q5">
+            <div class="question-title">
+                5. Welche Reihenfolge seiner späteren Wirkungsorte passt zu den Jahreszahlen?
+                (1678, 1690, 1692)
+            </div>
+            <label><input type="radio" name="q5" value="a"> Erfurt – Stuttgart – Eisenach</label>
+            <label><input type="radio" name="q5" value="b"> Stuttgart – Erfurt – Eisenach</label>
+            <label><input type="radio" name="q5" value="c"> Eisenach – Erfurt – Stuttgart</label>
+            <label><input type="radio" name="q5" value="d"> Eisenach – Stuttgart – Erfurt</label>
+        </div>
+
+        <!-- Frage 6 -->
+        <div class="question" data-question-id="q6">
+            <div class="question-title">
+                6. In welchem Jahr kehrte Pachelbel nach Nürnberg zurück?
+            </div>
+            <label><input type="radio" name="q6" value="a"> 1685</label>
+            <label><input type="radio" name="q6" value="b"> 1695</label>
+            <label><input type="radio" name="q6" value="c"> 1706</label>
+            <label><input type="radio" name="q6" value="d"> 1710</label>
+        </div>
+
+        <!-- Frage 7 -->
+        <div class="question" data-question-id="q7">
+            <div class="question-title">
+                7. An welchem Datum starb Johann Pachelbel?
+            </div>
+            <label><input type="radio" name="q7" value="a"> 01.09.1653</label>
+            <label><input type="radio" name="q7" value="b"> 03.03.1706</label>
+            <label><input type="radio" name="q7" value="c"> 31.12.1690</label>
+            <label><input type="radio" name="q7" value="d"> 14.07.1717</label>
+        </div>
+
+        <!-- Frage 8 -->
+        <div class="question" data-question-id="q8">
+            <div class="question-title">
+                8. Welches Werk gehört <u>nicht</u> zu den wichtigsten Werken,
+                die in der Präsentation genannt wurden?
+            </div>
+            <label><input type="radio" name="q8" value="a"> Choralsammlung</label>
+            <label><input type="radio" name="q8" value="b"> Fugen</label>
+            <label><input type="radio" name="q8" value="c"> Kanon in D</label>
+            <label><input type="radio" name="q8" value="d"> Die Zauberflöte</label>
+        </div>
+
+        <!-- Frage 9 -->
+        <div class="question" data-question-id="q9">
+            <div class="question-title">
+                9. Wodurch zeigt sich Pachelbels Einfluss heute laut Präsentation?
+            </div>
+            <label><input type="radio" name="q9" value="a">
+                Nur in der Kirchenmusik, sonst nirgends
+            </label>
+            <label><input type="radio" name="q9" value="b">
+                In Veranstaltungen und Popsongs, z.&nbsp;B. „Memories“ von Maroon&nbsp;5
+            </label>
+            <label><input type="radio" name="q9" value="c">
+                Ausschließlich in Opern
+            </label>
+            <label><input type="radio" name="q9" value="d">
+                Überhaupt nicht mehr – er ist vergessen
+            </label>
+        </div>
+
+        <div class="actions">
+            <button type="button" id="checkBtn">Auswerten</button>
+            <button type="button" id="resetBtn">Zurücksetzen</button>
+            <div class="hint">
+                Du kannst das Quiz mehrfach durchlaufen – ideal als Recap nach der Präsentation.
+            </div>
+        </div>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    // Richtige Antworten (Mapping Frage-ID -> korrekte Option)
+    const correctAnswers = {
+        q1: "b", // 01.09.1653
+        q2: "b", // 1669–1673
+        q3: "b", // Hilfsorganist, Bachs Bruder
+        q4: "b", // Eisenach
+        q5: "c", // Eisenach – Erfurt – Stuttgart
+        q6: "b", // 1695
+        q7: "b", // 03.03.1706
+        q8: "d", // Die Zauberflöte
+        q9: "b"  // Veranstaltungen + Popsongs / Memories
+    };
+
+    const checkBtn = document.getElementById("checkBtn");
+    const resetBtn = document.getElementById("resetBtn");
+    const resultDiv = document.getElementById("result");
+    const quizForm = document.getElementById("quizForm");
+
+    checkBtn.addEventListener("click", function () {
+        let score = 0;
+        let total = Object.keys(correctAnswers).length;
+
+        // Alle Fragen durchgehen
+        document.querySelectorAll(".question").forEach(function (qDiv) {
+            const qId = qDiv.getAttribute("data-question-id");
+            const checked = quizForm.querySelector('input[name="' + qId + '"]:checked');
+
+            // Styles zurücksetzen
+            qDiv.classList.remove("correct", "incorrect");
+
+            if (!checked) {
+                // keine Antwort -> als falsch werten
+                qDiv.classList.add("incorrect");
+                return;
+            }
+
+            if (checked.value === correctAnswers[qId]) {
+                score++;
+                qDiv.classList.add("correct");
+            } else {
+                qDiv.classList.add("incorrect");
+            }
+        });
+
+        resultDiv.textContent =
+            "Ergebnis: " + score + " von " + total + " Fragen korrekt.";
+    });
+
+    resetBtn.addEventListener("click", function () {
+        quizForm.reset();
+        resultDiv.textContent = "";
+        document.querySelectorAll(".question").forEach(function (qDiv) {
+            qDiv.classList.remove("correct", "incorrect");
+        });
+    });
+</script>
+</body>
+</html>
